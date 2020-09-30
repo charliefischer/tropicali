@@ -7,6 +7,8 @@ var browserSync = require("browser-sync").create()
 
 var imageMin = require("gulp-imageMin")
 
+var ghpages = require("gh-pages")
+
 
 sass.compiler = require('node-sass')
 
@@ -44,6 +46,8 @@ gulp.task("images", function () {
 })
 
 
+
+
 gulp.task("watch", function(){
 
     browserSync.init({
@@ -57,6 +61,11 @@ gulp.task("watch", function(){
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/img/*", ["images"])
 })
+
+gulp.task("deploy", function () {
+    ghpages.publish("dist")
+})
+
 
 
 gulp.task('default', ["html", "sass", "watch", "fonts", "images"]
