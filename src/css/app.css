@@ -1,0 +1,17 @@
+@custom-media --mq-medium (max-width:800px);
+
+:root {
+    --primary-color: orange;
+
+}
+
+@media (--mq-medium) {
+    :root {
+        --primary-color: silver;
+    }
+}
+
+
+body {
+    background-color:var(--primary-color);
+}
